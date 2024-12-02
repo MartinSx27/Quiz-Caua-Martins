@@ -9,7 +9,7 @@ public class Quiz {
         Questao[] questoes = new Questao[15];
 
         questoes[0] = criarQuestao("Qual é o trabalho de Tom Hansen no início do filme?",
-                "[A] Designer Gráfico", "[B] Arquiteto", "[C] Escritor de cartões comemorativos", "[D] Publicitário", "[E] Engenheiro Civil", "C");
+                "[A] Arquiteto", "[B] Designer Gráfico", "[C] Escritor de cartões comemorativos", "[D] Publicitário", "[E] Engenheiro Civil", "C");
 
         questoes[1] = criarQuestao("Em que local Tom e Summer se conhecem pela primeira vez?",
                 "[A] No elevador", "[B] No trabalho", "[C] Em uma livraria", "[D] Em um café", "[E] No parque", "B");
