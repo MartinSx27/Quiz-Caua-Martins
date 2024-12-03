@@ -1,7 +1,9 @@
+import java.util.Scanner;
+
 public class Quiz {
     public static void main(String[] args) {
         System.out.println("Faculdade Unifan");
-        System.out.println("Aluno: Caua martins dos santos");
+        System.out.println("Aluno: Caua Martins dos Santos");
         System.out.println("Professor: Brenno");
         System.out.println("\nBem-vindo ao Quiz sobre o filme (500) Dias com Ela!");
         System.out.println("Responda 15 perguntas de múltipla escolha e teste seus conhecimentos.\n");
@@ -54,10 +56,12 @@ public class Quiz {
                 "[A] 'Ela é perfeita.'", "[B] 'Ela não era a mulher da minha vida.'", "[C] 'Ela me ensinou a amar.'", "[D] 'Ela destruiu meus sonhos.'", "[E] 'Ela era apenas mais uma.'", "B");
 
         int acertos = 0;
+        Scanner scanner = new Scanner(System.in);  // Scanner para ler as respostas
+
         for (int i = 0; i < questoes.length; i++) {
             System.out.println("Pergunta " + (i + 1) + ":");
             questoes[i].escrevaQuestao();
-            String resposta = questoes[i].leiaResposta();
+            String resposta = scanner.nextLine().toUpperCase();  // Lê a resposta do usuário
             if (questoes[i].isCorreta(resposta)) {
                 acertos++;
             }
@@ -70,7 +74,10 @@ public class Quiz {
         System.out.println("Você acertou: " + acertos);
         System.out.println("Você errou: " + erros);
         System.out.printf("Porcentagem de acertos: %.2f%%\n", porcentagem);
+
+        scanner.close();
     }
+
 
     public static Questao criarQuestao(String pergunta, String opcaoA, String opcaoB, String opcaoC, String opcaoD, String opcaoE, String correta) {
         Questao q = new Questao();
@@ -82,5 +89,27 @@ public class Quiz {
         q.opcaoE = opcaoE;
         q.correta = correta;
         return q;
+    }
 }
+
+class Questao {
+    String pergunta;
+    String opcaoA;
+    String opcaoB;
+    String opcaoC;
+    String opcaoD;
+    String opcaoE;
+    String correta;
+
+    public void escrevaQuestao() {
+        System.out.println(pergunta);
+        System.out.println(opcaoA);
+        System.out.println(opcaoB);
+        System.out.println(opcaoC);
+        System.out.println(opcaoD);
+        System.out.println(opcaoE);
+    }
+    public boolean isCorreta(String resposta) {
+        return resposta.equals(correta);
+    }
 }
