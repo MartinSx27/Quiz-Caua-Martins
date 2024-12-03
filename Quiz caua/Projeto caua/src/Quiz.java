@@ -92,24 +92,4 @@ public class Quiz {
     }
 }
 
-class Questao {
-    String pergunta;
-    String opcaoA;
-    String opcaoB;
-    String opcaoC;
-    String opcaoD;
-    String opcaoE;
-    String correta;
 
-    public void escrevaQuestao() {
-        System.out.println(pergunta);
-        System.out.println(opcaoA);
-        System.out.println(opcaoB);
-        System.out.println(opcaoC);
-        System.out.println(opcaoD);
-        System.out.println(opcaoE);
-    }
-    public boolean isCorreta(String resposta) {
-        return resposta.equals(correta);
-    }
-}
